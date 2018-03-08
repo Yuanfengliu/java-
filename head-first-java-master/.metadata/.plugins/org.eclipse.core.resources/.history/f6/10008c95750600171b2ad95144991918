@@ -1,0 +1,14 @@
+package day16_Map;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+//查找字符串中字母出现的次数
+
+public class MapTest2{
+	public static void main(String[] args) {
+//		System.out.println(" ");
+		TreeMap<String, int> tm=new TreeMap<String, int>();
+		
+	}
+}

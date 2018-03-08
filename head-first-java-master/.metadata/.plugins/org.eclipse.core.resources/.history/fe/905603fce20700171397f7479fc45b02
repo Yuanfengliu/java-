@@ -1,0 +1,8 @@
+package day19_IO;
+import java.io.*;
+public class CopyTextByBuf {
+	public static void main(String[] args) throws IOException{
+		BufferedReader bfr=new BufferedReader("BufferReaderDemo.java");
+		
+	}
+}

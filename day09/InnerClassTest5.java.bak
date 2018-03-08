@@ -1,0 +1,36 @@
+
+interface Inter5
+{
+	void method();
+}
+class Test
+{
+	//不足代码。通过匿名内部类。
+	/*
+	static class Inner implements Inter5
+	{
+		public void method()
+		{
+			System.out.println("method run");
+		}
+	}
+	*/
+
+	static Inter5 function()
+	{
+		return new Inter5()
+		{
+			public void method()
+			{
+				System.out.println("method run");
+			}	
+		};
+	}
+}
+class InnerClassTest5 
+{
+	public static void main(String[] args) 
+	{
+		Test.function().method();
+	}
+}

@@ -1,0 +1,22 @@
+/*
+LinkedList特有方法：
+
+
+*/
+import java.util.*;
+class LinkedListDemo4
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		LinkedList link =new LinkedList();
+
+		link.add("java01");
+		link.add("java02");
+		link.add("java03");
+		link.add("java04");
+
+		System.out.println(link.removeFirst());
+		System.out.println("size="+link.size());
+	}
+}

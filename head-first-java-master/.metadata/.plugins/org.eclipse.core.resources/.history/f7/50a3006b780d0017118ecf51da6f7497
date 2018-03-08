@@ -1,0 +1,47 @@
+package day22_GUI;
+import java.awt.*;
+import java.awt.event.*;
+public class MyWindowDemo {
+	private Frame f;
+	private Button but;
+	private TextField tf;
+	private TextArea ta;
+	
+	
+	public MyWindowDemo() {
+		// TODO Auto-generated constructor stub
+		init();
+	}
+	
+	public void init()
+	{
+		f=new Frame("我的窗体");
+		f.setBounds(300,200,500,300);
+		f.setLayout(new FlowLayout());
+		
+		tf=new TextField(30);
+		but=new Button("转到");
+		ta=new TextArea(15,40);
+		
+		f.add(tf);
+		f.add(but);
+		f.add(ta);
+		
+		f.setVisible(true);
+		
+		myEvent();
+	}
+	
+	public void myEvent()
+	{
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e)
+			{
+				System.exit(0);
+			}
+		});
+	}
+	public static void main(String[] args) {
+		
+	}
+}

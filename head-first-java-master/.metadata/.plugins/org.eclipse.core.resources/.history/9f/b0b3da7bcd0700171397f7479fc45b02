@@ -1,0 +1,12 @@
+package day19_IO;
+import java.io.*;
+public class BufferReaderDemo {
+	public static void main(String[] args) throws IOException{
+		//创建一个读取流对象和文件相关联
+		FileReader fr=new FileReader("buf.txt");
+		//为了提高效率，加入缓冲技术。将字符读取流对象作为参数传进缓冲对象的构造函数
+		BufferedReader bufr=new BufferedReader(fr);
+		String s1=bufr.readLine();
+		System.out.println(s1);
+	}
+}

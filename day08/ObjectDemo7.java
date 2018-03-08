@@ -1,0 +1,73 @@
+/*
+Object:是所有对象的直接后者间接父类，传说中的上帝。
+该类中定义的肯定是所有对象都具备的功能。
+
+Object类中已经提供了对对象是否相同的比较方法。
+如果自定义类中也有比较相同的功能，没有必要重新定义。
+只要沿袭父类的功能，建立自己特有比较内容即可。这就是覆盖。
+*/
+
+class Demo//extends object
+{
+	private int num;
+	Demo(int num)
+	{
+		this.num=num;
+	}
+	public boolean equals(Object obj)//Object obj=new Demo()
+	{
+		if (!(obj instanceof Demo))//判断类型是否相等
+		{
+			return false;
+		}
+		Demo d=(Demo)obj;//转换
+		return this.num==d.num;
+	}
+//	public boolean compare(Demo d)
+//	{
+//		return this.num==d.num;
+//	}
+
+	public String toString()//覆写
+	{
+		return "demo:"+num;
+	}
+}
+class Person
+{
+}
+class ObjectDemo7 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		Demo d1=new Demo(4);
+		Demo d2=new Demo(6);
+		Demo d3= d1;
+
+		System.out.println(d1.equals(d3));
+		System.out.println(d1==d2);
+		System.out.println(d1==d3);
+
+System.out.println("------------------------");
+//		System.out.println(d1.compare(d2));
+		System.out.println(d1.equals(d2));
+
+System.out.println("------------------------");
+
+		Person p1=new Person();
+		Person p2=new Person();
+		System.out.println("person:   "+p1.equals(p2));
+	
+System.out.println("------------------------");
+		Class c=d1.getClass();
+		System.out.println(c.getName());
+		System.out.println(c.getName()+"@"+Integer.toHexString(d1.hashCode()));
+		System.out.println(d1.toString());//转换成字符算//发现与上一行一样的结果，后面几个数字是十六进制	
+		//如果没有31到34，上面两行结果是一样的
+
+System.out.println("------------------------");
+		Demo d5=new Demo(8);
+		System.out.println(d5.toString());
+	}
+}

@@ -1,0 +1,55 @@
+//package day19_IO;
+import java.io.*;
+class MyLineNumberReader
+{
+	private Reader r;
+	private int lineNumber;
+	public MyLineNumberReader(Reader r) {
+		// TODO Auto-generated constructor stub
+		this.r=r;
+	}
+	public String myReadLine() throws IOException
+	{
+		StringBuilder sb=new StringBuilder();
+		int ch=0;
+		while((ch=r.read())!=-1)
+		{
+			if(ch=='\r')
+				continue;
+			if(ch=='\n')
+				return sb.toString();
+			else
+				sb.append((char)(ch));
+		}
+		if(sb.length()!=0)
+			return sb.toString();
+		return null;
+	}
+	public void setLineNumber(int LineNumber)
+	{
+		this.lineNumber=lineNumber;
+	}
+	public int getLineNumber()
+	{
+		return this.lineNumber;
+	}
+	public void myclose() throws IOException
+	{
+		r.close();
+	}
+}
+public class MyLineNumberReaderDemo {
+	public static void main(String[] args) throws IOException{
+		FileReader fr=new FileReader("BufferReaderDemo.java");
+		MyLineNumberReader mlnr=new MyLineNumberReader(fr);
+		String  line=null;
+		mlnr.setLineNumber(100);
+		while((line=mlnr.myReadLine())!=null)
+		{
+			System.out.println(mlnr.getLineNumber()+":"+line);
+		}
+		
+//		System.out.println(mlnr.getLineNumber());
+		mlnr.myclose();
+	}
+}

@@ -1,0 +1,47 @@
+/***********循环结构************
+while  语句格式
+while (条件格式)
+{
+		条件格式;
+}
+
+do 
+{
+	;
+}
+while();
+*/
+/***********循环结构for************
+
+*/
+/*******总结**********
+1；变量有自己的作用域，对于for来讲；如果将用于控制循环
+	的增量定义在for语句中，那么该变量只在for语句中有效，
+	for语句执行完毕，该变量在内存中被释放。
+2：for和while可以进行互换。如果需要定义循环增量，用for更为合适。
+*/
+/*continue:只能作用于循环结构，继续循环。
+特点：结束本次循环，继续下一次循环。
+若在for内，后面的语句不会再执行
+记住：
+	1：break和continue语句作用范围。
+	2：break和continue语句单独存在时，下面可以有任何语句。因为执行不到。
+*/
+
+class  LianXi
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		w:for (int x=0;x<3 ;x++ )//结果是x=0 x=1 x=2
+		{
+			for (int y=0;y<4 ;y++ )
+			{
+				System.out.println("x="+x);
+				continue w;	//继续外面一个循环中，即到x++那一步
+				System.out.println("liu");//这一步不会执行到,写上去会报错。
+			}
+		}
+	}
+}
+ 

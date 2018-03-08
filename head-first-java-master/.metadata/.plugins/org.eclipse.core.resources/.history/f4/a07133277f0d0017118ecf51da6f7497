@@ -1,0 +1,6 @@
+package day22_GUI;
+import java.awt.*;
+import java.awt.event.*;
+public class MyMenuDemo {
+
+}

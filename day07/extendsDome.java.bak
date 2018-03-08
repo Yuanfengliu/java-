@@ -1,0 +1,31 @@
+/*
+将学生和工人的共性描述提取出来，单独进行描述，
+只要
+
+*/
+class person
+{
+	String name;
+	int age;
+}
+class student extends person
+{	
+	void study()
+	{
+		System.out.println("dood student");
+	}
+}
+class worker extends person
+{
+	void work()
+	{
+		System.out.println("dood work");
+	}
+}
+class extendsDome 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}

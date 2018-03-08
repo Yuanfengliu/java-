@@ -1,0 +1,10 @@
+
+package pack;//定义包名  所有的字母小写
+
+class  PackageDemo
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello package!");
+	}
+}

@@ -1,0 +1,54 @@
+/*******************************异常练习1*********************
+有一个长方形
+都可以获取面积，对于面积如果出现的数值，视为是获取面积出现问题。
+问题通过异常来表示。
+现有对这个程序进行基本设计。
+*/
+class NoValueException extends RuntimeException//用这个Exception则第21行就不能注释掉，
+{
+	NoValueException(String message)
+	{
+		super(message);
+	}
+}
+interface Shape
+{
+	void getArea();
+}
+class Rec implements Shape
+{
+	private int len,wid;
+	Rec(int len,int wid)//throws NoValueException
+	{
+		if (len<=0 || wid<=0)
+			throw new NoValueException("出现非法值");
+		this.len=len;
+		this.wid=wid;
+	}
+	public void getArea()
+	{
+		System.out.println(len*wid);
+	}
+}
+class ExceptionTest3 
+{	
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		Rec r=new Rec(-3,4);
+			r.getArea();
+		System.out.println("over");
+		/*(用下面这个情况，就得在7，21行那2处改动一；课余时间可以试试下)
+		try
+		{
+			Rec r=new Rec(-3,4);
+			r.getArea();
+		}
+		catch (NoValueException e)
+		{
+			System.out.println(e.toString());
+		}
+		System.out.println("over");
+		*/
+	}
+}

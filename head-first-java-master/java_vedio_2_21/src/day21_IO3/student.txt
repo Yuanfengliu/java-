@@ -1,0 +1,4 @@
+Student[liuliu, 60, 90, 130]	280
+Student[zhangsan, 30, 50, 100]	180
+Student[lisi, 70, 90, 66]	226
+Student[wangwu, 29, 13, 25]	67

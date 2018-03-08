@@ -1,0 +1,14 @@
+package day19_IO;
+import java.io.*;
+public class CopyPic {
+	public static void main(String[] args) {
+		FileOutputStream fos=null;
+		FileInputStream fis=null;
+		try
+		{
+			fos=new FileOutputStream("c:\\1.jpg");
+			fis=new FileInputStream("c\\2.jpg");
+		}
+	}
+	
+}

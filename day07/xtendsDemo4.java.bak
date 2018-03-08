@@ -1,0 +1,85 @@
+/*
+子父类中的构造函数：
+在对子类对象进行初始化时，父类的构造函数也会运行，
+那是因为子类的构造函数第一行默认有一条隐式语句super()；
+super()：会访问父类中空参数的构造函数（记住是空参数的...）。而且子类中所有的构造函数默认第一行都是super()
+
+为什么子类一定要访问父类中的构造函数？
+答：因为父类中的数据子类可以直接获取，所以子类对象在建立时，需要先查看父类如何对这些数据进行初始化的，
+所以子类在对象进行初始化时，要先访问一下父类中的构造函数.
+如果要访问父类中指定的构造函数，可以通过手动定义super语句来指定。
+
+注意：super语句一定定义在子类构造函数的第一行.
+
+结论：
+子类所有的构造函数默认都会访问父类中空参数的构造函数，
+因为子类每一个构造函数的第一行都有一句隐式的super();
+当父类中没有空的构造函数时，子类必须手动通过super或者this语句形式来指定要访问父类中的构造函数。
+当然：子类中的构造函数第一行也可以手动指定this语句来访问本类中的构造函数，
+子类中至少会有一个构造函数会访问父类中的构造函数.
+(其实父类也隐藏super(),因为他也有的父类，他是extends object，这是所有类的父类)
+*/
+
+class Fu
+{
+	int num;
+	Fu()
+	{
+		num=60;
+		System.out.println("fu run");
+	}
+}
+class Zi extends Fu
+{
+	Zi()
+	{
+		//super();这是默认有一条隐式语句
+		System.out.println("zi run");
+	}
+	Zi(int x)
+	{
+		//super();这是默认有一条隐式语句
+		System.out.println("zi ....."+x);
+	}
+}
+
+
+class xtendsDemo4 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		Zi z=new Zi();
+		Zi z1=new Zi(4);
+		System.out.println(z.num);
+	}
+}
+
+
+
+/*(注意：当父类不是空参数，即如下。则子类必须手动加入super(x);)
+class Fu
+{
+	Fu(int x)
+	{
+		System.out.println("fu run");
+	}
+}
+class Zi extends Fu
+{
+	Zi()
+	{
+		//super();这是默认有一条隐式语句
+		super(4);
+		System.out.println("zi run");
+	}
+	Zi(int x)
+	{
+		//super();这是默认有一条隐式语句
+		super(3);
+		System.out.println("zi ....."+x);
+	}
+}
+
+
+*/

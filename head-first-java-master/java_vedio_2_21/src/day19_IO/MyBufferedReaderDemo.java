@@ -1,0 +1,51 @@
+package day19_IO;
+
+import java.io.*;
+
+import javax.print.attribute.standard.RequestingUserName;
+
+//明白了BufferedReader类中特有方法readLine的原理后，可以自定义一个类中包含一个功能和readLine一样的方法。
+class MyBufferedReader {
+	private FileReader r;
+
+	MyBufferedReader(FileReader r) {
+		this.r = r;
+	}
+
+	// 定义一个临时容器，原StringReader封装的是字符数组。
+	// 为了
+	public String myReadLine() throws IOException
+	{
+		StringBuilder sb = new StringBuilder();
+		int ch = 0;
+		while((ch=r.read())!=-1)
+		{
+			if(ch=='\r')
+				continue;
+			if(ch=='\n')
+				return sb.toString();
+			else
+				sb.append((char)ch);
+		}
+		if(sb.length()!=0)
+			return sb.toString();
+		return null;
+	}
+	public void myClose() throws IOException
+	{
+		r.close();
+	}
+}
+
+public class MyBufferedReaderDemo {
+	public static void main(String[] args) throws IOException{
+		FileReader fr=new FileReader("buf.txt");
+		MyBufferedReader mbfr=new MyBufferedReader(fr);
+		String ch=null;
+		while((ch=mbfr.myReadLine())!=null)
+		{
+			System.out.println(ch);
+		}
+		mbfr.myClose();
+	}
+}

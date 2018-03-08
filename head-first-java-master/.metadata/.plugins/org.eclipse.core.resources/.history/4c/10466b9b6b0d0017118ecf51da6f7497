@@ -1,0 +1,13 @@
+package day22_GUI;
+import java.awt.*;
+public class AwtDemo {
+	public static void main(String[] args) {
+		Frame f=new Frame("My awt");
+		
+		f.setSize(500, 200);
+		f.setLocation(200, 20);
+		Button b=new Button("我是一个按钮");
+		f.add(b);
+		f.setVisible(true);
+	}
+}

@@ -1,0 +1,13 @@
+package day19_IO;
+import java.io.*;
+public class OutPutStreamDemo {
+	public static void main(String[] args) {
+
+	}
+	public static void writeFile() throws IOException
+	{
+		FileOutputStream fos=new FileOutputStream("fos.txt");
+		
+		fos.write("abcde".getBytes());
+	}
+}

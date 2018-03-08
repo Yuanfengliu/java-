@@ -1,0 +1,26 @@
+package day22_GUI;
+import java.awt.*;
+import java.awt.event.*;
+public class MouseEventDemo {
+	private Frame f;
+	private Button but;
+	
+	public MouseEventDemo() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void init()
+	{
+		f=new Frame("鼠标和键盘时间测试");
+		f.setBounds(100, 200, 500, 300);
+		f.setLayout(new FlowLayout());
+		but=new Button("鼠标事件");
+		f.add(but);
+		
+		f.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

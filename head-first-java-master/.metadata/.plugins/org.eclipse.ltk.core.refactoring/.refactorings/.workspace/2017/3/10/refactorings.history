@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Thinking_in_Java_Fourth_Edition_Code&apos;" deleteContents="false" description="Delete resource &apos;Thinking_in_Java_Fourth_Edition_Code&apos;" element1="/Thinking_in_Java_Fourth_Edition_Code" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1488936821774"/>
+</session>

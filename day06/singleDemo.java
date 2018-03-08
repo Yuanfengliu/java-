@@ -1,0 +1,53 @@
+/*
+设计模式：解决某一类问题最行之有效的方法。
+Java中23中设计模式：
+单例设计模式：解决一个类在内存只存在一个现象。
+
+想要保证对象唯一：
+1，为了避免其他程序过多建立该类对象，先禁止其他程序建立该对象。
+2，还为了让其它程序可以访问到该类对象，只好在本类中，自定义一个对象。
+3，为了方便其他程序对自定义对象的访问，可以对外提供一些访问方式
+
+这三部分怎么用代码体现呢？
+1，将构造函数私有化。
+2，在类中创建一个本类对象。
+3，提供一个方法可以获取到该对象。
+
+
+对于事物该怎么描述，还怎么描述。
+当需要将该事物的对象保证在内存中唯一时，加上以上三步即可。
+*/
+class single
+{
+	private int num;
+	public void setNum(int num)
+	{
+		this.num=num;
+	}
+	public int getNum()
+	{
+		return num;
+	}
+	private single(){}
+	private static single s =new single();
+	public static single getInstance()
+	{
+		return s;
+	}
+}
+class singleDemo
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		//single ss=single.getInstance();//ss指向堆内存的对象new single();因为这是返回值s赋值给他的
+		//single ssss=single.getInstance();若再来一条这个。ssss还是指向new single() 同ss一样，只有一个对象保证了对象的唯一性。
+
+//		single s1=new single();
+//		single s2=new single();
+//		s1.setNum(30);
+//		System.out.println(s2.getNum());
+		//运行前面四行的结果：（去掉31行的private，否则无法访问）
+		//结果为0
+	}
+}

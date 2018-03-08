@@ -1,0 +1,27 @@
+package day22_GUI;
+import java.awt.*;
+import java.awt.event.*;
+public class MyMenuDemo {
+	private Frame f;
+	private MenuBar mb;
+	private Menu m;
+	private MenuItem closeItem;
+	
+	public MyMenuDemo() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void init()
+	{
+		f=new Frame("菜单展示");
+		f.setBounds(200,300,500,600);
+		f.setLayout(new FlowLayout());
+		
+		mb=new MenuBar();
+		m=new Menu("文件");
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}
